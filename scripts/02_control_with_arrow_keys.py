@@ -8,7 +8,7 @@ from dronekit import connect, VehicleMode, LocationGlobalRelative, Command, Loca
 from pymavlink import mavutil
 
 #- Importing Tkinter: sudo apt-get install python-tk
-import Tkinter as tk
+import tkinter as tk
 
 
 #-- Connect to the vehicle
@@ -76,15 +76,15 @@ def key(event):
             print("r pressed >> Set the vehicle to RTL")
             vehicle.mode = VehicleMode("RTL")
             
-    else: #-- non standard keys
-        if event.keysym == 'Up':
-            set_velocity_body(vehicle, gnd_speed, 0, 0)
-        elif event.keysym == 'Down':
-            set_velocity_body(vehicle,-gnd_speed, 0, 0)
-        elif event.keysym == 'Left':
-            set_velocity_body(vehicle, 0, -gnd_speed, 0)
-        elif event.keysym == 'Right':
-            set_velocity_body(vehicle, 0, gnd_speed, 0)
+       else: #-- non standard keys
+           if event.keysym == 'Up':
+               set_velocity_body(vehicle, gnd_speed, 0, 0)
+           elif event.keysym == 'Down':
+               set_velocity_body(vehicle,-gnd_speed, 0, 0)
+           elif event.keysym == 'Left':
+               set_velocity_body(vehicle, 0, -gnd_speed, 0)
+           elif event.keysym == 'Right':
+               set_velocity_body(vehicle, 0, gnd_speed, 0)
     
     
 #---- MAIN FUNCTION
